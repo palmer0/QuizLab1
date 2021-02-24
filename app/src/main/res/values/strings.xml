@@ -5,4 +5,10 @@
     <string name="true_button_text">True</string>
     <string name="false_button_text">False</string>
     <string name="empty_text" />
+
+    <array name="question_array">
+        <item>Question # 1</item>
+        <item>Question # 2</item>
+        <item>Question # 3</item>
+    </array>
 </resources>
