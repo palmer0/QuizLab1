@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
   private Button nextButton, falseButton, trueButton;
   private TextView questionText, replyText;
   private String[] questionArray;
+  private int[] replyArray;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +28,19 @@ public class MainActivity extends AppCompatActivity {
     falseButton=findViewById(R.id.falseButton);
     trueButton=findViewById(R.id.trueButton);
 
+    questionText=findViewById(R.id.questionText);
+    replyText=findViewById(R.id.replyText);
+
+    replyArray = getResources().getIntArray(R.array.reply_array);
+
     trueButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         // codigo ejecutado cuando hagan clic en True button
+
+        if(replyArray[0] == 1) {
+          replyText.setText(R.string.correct_text);
+        }
       }
     });
 
@@ -38,14 +48,29 @@ public class MainActivity extends AppCompatActivity {
       @Override
       public void onClick(View view) {
         // codigo ejecutado cuando hagan clic en False button
+        if(replyArray[0] == 1) {
+          replyText.setText(R.string.incorrect_text);
+        }
       }
     });
 
-    questionText=findViewById(R.id.questionText);
-    replyText=findViewById(R.id.replyText);
 
     // Inicializar contenido layout primera pantalla app
     questionArray = getResources().getStringArray(R.array.question_array);
     questionText.setText(questionArray[0]);
   }
+
+
+  private void initLayoutData() {
+
+  }
+
+  private void linkLayoutComponents() {
+
+  }
+
+  private void initLayoutContent() {
+
+  }
+
 }

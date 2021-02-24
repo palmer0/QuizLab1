@@ -5,10 +5,18 @@
     <string name="true_button_text">True</string>
     <string name="false_button_text">False</string>
     <string name="empty_text" />
+    <string name="correct_text">Correct</string>
+    <string name="incorrect_text">Incorrect</string>
 
     <array name="question_array">
-        <item>Question # 1</item>
-        <item>Question # 2</item>
-        <item>Question # 3</item>
+        <item>Question #1: True</item>
+        <item>Question #2: False</item>
+        <item>Question #3: True</item>
     </array>
+
+    <integer-array name="reply_array">
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+    </integer-array>
 </resources>
