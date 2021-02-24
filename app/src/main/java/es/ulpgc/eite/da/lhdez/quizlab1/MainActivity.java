@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-  private Button nextButton, falseButton, trueButton;
+  private Button nextButton, falseButton, trueButton, cheatButton;
   private TextView questionText, replyText;
   private String[] questionArray;
   private int[] replyArray;
@@ -19,11 +19,24 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    initLayoutData();
+    linkLayoutComponents();
+    initLayoutContent();
+
+  }
+
+
+  private void initLayoutData() {
+    questionArray = getResources().getStringArray(R.array.question_array);
+    replyArray = getResources().getIntArray(R.array.reply_array);
+  }
+
+  private void linkLayoutComponents() {
     // Conectar componentes del layout
     // con código Java de actividad para primera pantalla
 
-    View cheatButton = findViewById(R.id.cheatButton);
-    //cheatButton = findViewById(R.id.cheatButton);
+    //View cheatButton = findViewById(R.id.cheatButton);
+    cheatButton = findViewById(R.id.cheatButton);
     nextButton=findViewById(R.id.nextButton);
     falseButton=findViewById(R.id.falseButton);
     trueButton=findViewById(R.id.trueButton);
@@ -31,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     questionText=findViewById(R.id.questionText);
     replyText=findViewById(R.id.replyText);
 
-    replyArray = getResources().getIntArray(R.array.reply_array);
+
 
     trueButton.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -53,24 +66,12 @@ public class MainActivity extends AppCompatActivity {
         }
       }
     });
-
-
-    // Inicializar contenido layout primera pantalla app
-    questionArray = getResources().getStringArray(R.array.question_array);
-    questionText.setText(questionArray[0]);
-  }
-
-
-  private void initLayoutData() {
-
-  }
-
-  private void linkLayoutComponents() {
-
   }
 
   private void initLayoutContent() {
+    // Inicializar contenido layout primera pantalla app
 
+    questionText.setText(questionArray[0]);
   }
 
 }
